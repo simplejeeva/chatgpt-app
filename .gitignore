@@ -1,0 +1,50 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyc
+
+# Environment variables and secret keys
+.env
+
+# SQLite and other DB files
+*.sqlite3
+*.db
+*.log
+
+# Compiled model files
+*.pt
+*.gguf
+
+# PDFs and other uploaded documents
+*.pdf
+*.zip
+*.tar.gz
+
+# ChromaDB directories
+chroma/
+chroma_db/
+path_to_chroma_db/
+db/
+
+# Media & static files
+media/
+staticfiles/
+
+# Node modules
+node_modules/
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# VSCode & IDEs
+.vscode/
+.idea/
+
+# Mac system files
+.DS_Store
+
+# Git Large File Storage files (LFS)
+.gitattributes
