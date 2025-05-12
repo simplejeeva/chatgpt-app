@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: my-django-app
+    name: chatgpt
     runtime: python
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn chatgpt.wsgi:application --bind 0.0.0.0:$PORT
