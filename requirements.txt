@@ -58,6 +58,7 @@ nest-asyncio==1.6.0
 networkx==3.4.2
 numpy==2.2.5
 oauthlib==3.2.2
+openai==4.0.1
 olefile==0.47
 opentelemetry-proto==1.32.1
 opentelemetry-util-http==0.53b1
