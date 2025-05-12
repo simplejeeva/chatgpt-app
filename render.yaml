@@ -7,3 +7,12 @@ services:
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: chatgpt.settings
+      - key: SECRET_KEY
+        value: your-very-secret-key
+      - key: DATABASE_URL
+        fromDatabase:
+          name: chatgpt-db
+          property: connectionString
+
+databases:
+  - name: chatgpt-db
