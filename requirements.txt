@@ -49,7 +49,7 @@ jsonpointer==3.0.0
 langdetect==1.0.9
 lxml==5.4.0
 llama-cpp-python
-langchain
+langchain==0.1.16
 
 markdown-it-py==3.0.0
 MarkupSafe==3.0.2
