@@ -134,7 +134,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-DEBUG = True
+DEBUG = False
 
 LOGGING = {
     'version': 1,
