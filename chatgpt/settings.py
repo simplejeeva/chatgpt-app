@@ -26,7 +26,11 @@ SECRET_KEY = 'django-insecure-+gs-2c@$f)bja(%%ljmb+!3%ixca2!9wb-3h)*ecsq_ag5*@g^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'chatgpt-app-ny8i.onrender.com',  
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # Application definition
