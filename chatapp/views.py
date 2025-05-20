@@ -23,6 +23,7 @@ from chromadb import PersistentClient
 from chromadb.utils import embedding_functions
 from langchain.text_splitter import CharacterTextSplitter
 from chromadb.config import Settings
+from django.views.decorators.cache import never_cache
 
 # Load environment variables
 load_dotenv()
@@ -70,7 +71,7 @@ def index(request):
     context = {"t_questions": t_questions, "y_questions": y_questions, "s_questions": s_questions}
     return render(request, "chatapp/index.html", context)
 
-
+@never_cache
 def signup(request):
     """
     Handles user signup by creating a new account and logging the user in.
@@ -90,7 +91,7 @@ def signup(request):
 
     return render(request, "chatapp/signup.html", {"form": form})
 
-
+@never_cache
 def signin(request):
     """
     Handles user login by authenticating the user credentials.
