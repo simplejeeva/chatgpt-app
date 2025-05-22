@@ -1,17 +1,27 @@
 FROM python:3.11.4-slim-bullseye
+
 WORKDIR /app
 
-ENV PYTHONUNBUFFERED 1
-ENV PYTHONDONTWRITEBYTECODE 1
+# Avoid Python writing .pyc files and ensure logs are unbuffered
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
 
-# install system dependencies
-RUN apt-get update
+# Install system build tools and dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    cmake \
+    gcc \
+    g++ \
+    git \
+    && rm -rf /var/lib/apt/lists/*
 
-# install dependencies
-RUN pip install --upgrade pip
+# Upgrade pip and install Python dependencies
 COPY ./requirements.txt /app/
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip \
+    && pip install -r requirements.txt
 
+# Copy project code
 COPY . /app
 
-ENTRYPOINT [ "gunicorn", "core.wsgi", "-b", "0.0.0.0:8000"]
+# Set entrypoint using gunicorn to run Django
+ENTRYPOINT ["gunicorn", "core.wsgi:application", "-b", "0.0.0.0:8000"]
