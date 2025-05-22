@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-+gs-2c@$f)bja(%%ljmb+!3%ixca2!9wb-3h)*ecsq_ag5*@g^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS =["*"]
+ALLOWED_HOSTS =[".onrender.com"]
 
 
 # Application definition
@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware'
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = 'chatgpt.urls'
@@ -120,7 +120,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT="staticfiles"
+STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage",
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
